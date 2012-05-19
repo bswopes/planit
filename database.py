@@ -1,6 +1,8 @@
 import sqlite3
 
-c = sqlite3.connect("data.db").cursor()
+db = 'data.db'
+cxn = sqlite3.connect(db)
+cursor = cxn.cursor()
 
 def init():
     c.execute("create table people (username, userID)")
@@ -10,5 +12,11 @@ def init():
     c.execute("create table plans (userID, eventID)")
     c.execute("create table intents (userID, activityID)")
     
+def addEvent(name): 
+    cursor.execute('INSERT INTO events (name) VALUES("' + name + '")')
+    cxn.commit()
 
-def 
+def events():
+    cursor.execute('SELECT * FROM events')
+    entries = cursor.fetchall()
+    return entries
