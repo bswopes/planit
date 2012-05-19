@@ -1,0 +1,237 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td {
+  margin: 0;
+  padding: 0; }
+
+html {
+  height: 100%; }
+
+body {
+  color: #000000;
+  height: 100%; }
+
+input, select {
+  outline: none; }
+
+#wrap {
+  min-height: 100%; }
+
+#header {
+  height: 150px; }
+  #header h1 {
+    display: none; }
+  #header a {
+    border: none; }
+  #header img {
+    position: absolute;
+    top: 47px;
+    left: 50%;
+    margin-left: -155px;
+    border: none; }
+
+#loading-main {
+  display: none; }
+  #loading-main img {
+    display: block;
+    margin: 30px auto; }
+
+#content {
+  padding: 30px 0 100px 0;
+  margin: 0px auto;
+  width: 500px;
+  text-align: center;
+  font-family: Verdana;
+  font-size: 80%; }
+  #content h2 {
+    text-align: center;
+    font-family: 'Georgia';
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 0 0 2px 0;
+    border-bottom: 1px solid #DDD; }
+  #content h3 {
+    text-align: center;
+    font-family: 'Georgia';
+    font-weight: 100;
+    font-size: 17px;
+    margin-top: 25px;
+    margin-bottom: -3px;
+    padding-bottom: 1px; }
+  #content p {
+    text-align: justify; }
+  #content p + * {
+    margin-top: 1em; }
+  #content li {
+    text-align: left;
+    margin-left: 20px;
+    list-style-type: square; }
+  #content ul > li {
+    margin-top: 8px;
+    margin-bottom: 8px; }
+  #content a {
+    color: #444444; }
+    #content a:hover {
+      color: #777777; }
+  #content dfn {
+    font-style: normal; }
+  #content img {
+    margin: 15px;
+    box-shadow: 0px 0px 10px #000;
+    border: 0; }
+  #content h2 + a img {
+    margin-top: 5px; }
+  #content table {
+    width: 100%;
+    border-spacing: 0px; }
+    #content table td, #content table th {
+      border-top: 1px solid #DDD; }
+    #content table th {
+      padding: 5px 10px; }
+    #content table td {
+      padding: 5px 5px; }
+  #content form .datetime {
+    background: url(calendar.png) right center no-repeat; }
+  #content form textarea {
+    width: 100%;
+    height: 70px; }
+  #content form input, #content form select {
+    width: 100%;
+    padding: 3px; }
+  #content .menu li {
+    display: inline;
+    list-style-type: none;
+    margin: 0px 15px; }
+
+#calendar_container {
+  margin-top: -26px;
+  font-family: Verdana;
+  font-size: 90%; }
+  #calendar_container #calendar {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #DDD; }
+    #calendar_container #calendar #months {
+      background: #fff;
+      white-space: nowrap; }
+      #calendar_container #calendar #months div {
+        display: inline-block;
+        zoom: 1;
+        *display: inline; }
+        #calendar_container #calendar #months div div {
+          display: inline-block;
+          zoom: 1;
+          *display: inline;
+          line-height: 25px;
+          width: 179px;
+          text-align: center;
+          font-size: 12px;
+          background: #DDD;
+          border: 1px solid #BBB;
+          position: relative;
+          right: 1px;
+          border-bottom: none;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px; }
+    #calendar_container #calendar #calendar_main {
+      position: relative; }
+      #calendar_container #calendar #calendar_main #past {
+        position: absolute;
+        height: 100%;
+        z-index: -10;
+        background: url(stripe_white.png);
+        border-right: 1px solid #555; }
+      #calendar_container #calendar #calendar_main #days {
+        background-image: url(timeline-back.png); }
+        #calendar_container #calendar #calendar_main #days div {
+          border-top: 1px solid #DDD;
+          display: inline-block;
+          zoom: 1;
+          *display: inline;
+          line-height: 20px;
+          text-align: center;
+          font-size: 12px; }
+        #calendar_container #calendar #calendar_main #days #today {
+          font-weight: bold; }
+      #calendar_container #calendar #calendar_main #timeline {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative; }
+        #calendar_container #calendar #calendar_main #timeline #timeline_back {
+          padding: 12px 0 33px 0;
+          background: url(timeline-back.png); }
+  #calendar_container #calendar_options {
+    float: right;
+    border: 1px solid #BBB;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    line-height: 25px;
+    padding: 0 20px;
+    background: #DDD;
+    font-size: 75%; }
+    #calendar_container #calendar_options select {
+      background: #DDD;
+      border: none;
+      font-weight: bold;
+      font-family: Verdana;
+      font-size: 100%;
+      cursor: pointer; }
+
+.bar {
+  font-family: Verdana;
+  font-size: 90%;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  box-shadow: 0px 0px 10px #000; }
+  .bar > div {
+    background: url(bar-border.png) no-repeat; }
+    .bar > div div {
+      margin-left: 10px;
+      background: url(bar-border.png) no-repeat bottom right; }
+  .bar.ended {
+    background: url(stripe_ended.png); }
+    .bar.ended a {
+      color: #000 !important;
+      text-shadow: #FFF 0px 0px 3px !important; }
+  .bar p {
+    margin: 0 !important;
+    padding: 8px 17px 8px 7px;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: left !important; }
+    .bar p .black {
+      color: #000000;
+      text-shadow: #EEEEEE 0px 0px 3px; }
+    .bar p .white {
+      color: #FFFFFF;
+      text-shadow: #000000 0px 0px 3px; }
+    .bar p a {
+      text-decoration: none; }
+    .bar p a:hover {
+      cursor: pointer;
+      text-decoration: underline; }
+
+#footer {
+  vertical-align: bottom;
+  height: 70px;
+  margin-top: -70px;
+  text-align: center;
+  color: #BBB;
+  font-family: Verdana;
+  font-size: 80%; }
+  #footer a {
+    color: #BBB;
+    text-decoration: none; }
+  #footer #sharers {
+    margin-bottom: 10px; }
+    #footer #sharers .sharer {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+      font-size: 1px;
+      height: 20px;
+      opacity: .5; }
+      #footer #sharers .sharer:hover {
+        opacity: 1; }

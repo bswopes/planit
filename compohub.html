@@ -1,0 +1,241 @@
+
+<!doctype html>
+<html lang=en>
+<head>
+<title>CompoHub</title>
+<meta charset=utf-8>
+<meta name=description content="CompoHub lists all kinds of game development events!">
+<meta property=og:title content=CompoHub>
+<meta property=og:description content="CompoHub lists all kinds of game development events!">
+<meta itemprop=name content=CompoHub>
+<meta itemprop=description content="CompoHub lists all kinds of game development events!">
+<link rel=stylesheet type="text/css" href="style/style.css">
+<!--[if lte IE 8]><style type="text/css">
+
+			#content { clear: both; }
+
+		</style><![endif]-->
+<!--[if IE 6]><style type="text/css">
+
+			.bar { overflow: hidden; }
+
+			.bar p { position: relative; }
+
+		</style><![endif]-->
+<style type="text/css">
+
+<!--
+
+	#days div { width: 90px; }
+
+	
+
+	#days,
+
+	#timeline,
+
+	.row { width: 10800px; }
+
+	
+
+	#timeline {
+
+		background: url(style/timeline-back-days.png) repeat-x;
+
+		background-position: -270px bottom;
+
+	}
+
+	
+
+	-->
+
+</style>
+<script type="text/javascript">
+
+<!--
+
+window.logged_in = false;
+window.base_dir = '/';
+window.calendar_open = true;
+window.cal_day_width = 90;
+window.calendar_scroll = 2430;
+window.cal_start_time = 1334793600;
+window.events = [
+	['Dream.Build.Play 2012', 1330963200, 1339531140, 1, 8925, '#2e73b8', 'white', 148, 0],
+	['RPG Four Digits Competition', 1335830400, 1343779200, 1, 8280, '#565656', 'white', 146, 0],
+	['Stencyl Jam 2012', 1335830400, 1343779140, 0, 8280, '#ffd900', 'black', 149, 0],
+	['Experimental Gameplay Project - April & May', 1333238400, 1338508740, 0, 5490, '#cc3131', 'white', 85, 0],
+	['7 Day Dev Challenge', 1337299200, 1339995540, 1, 2809, '#454444', 'white', 166, 0],
+	['The Browser-Based Game Challenge', 1337101200, 1339779600, 1, 2790, '#f26529', 'white', 157, 0],
+	['The Browser-Based Game Challenge', 1345050000, 1347728400, 1, 2790, '#f26529', 'white', 160, 0],
+	['The Browser-Based Game Challenge', 1342371600, 1345050000, 1, 2790, '#f26529', 'white', 159, 0],
+	['Liberated Pixel Cup: Coding Phase', 1341100800, 1343779140, 0, 2790, '#71b524', 'black', 139, 0],
+	['The Fifth Super Friendship Club Pageant', 1333238400, 1335916740, 0, 2790, '#ff3363', 'white', 137, 0],
+	['Experimental Gameplay Project - August', 1343779200, 1346457540, 0, 2790, '#cc3131', 'white', 115, 0],
+	['Experimental Gameplay Project - July', 1341100800, 1343779140, 0, 2790, '#cc3131', 'white', 114, 0],
+	['The Browser-Based Game Challenge', 1339779600, 1342371600, 1, 2700, '#f26529', 'white', 158, 0],
+	['The Browser-Based Game Challenge', 1334509200, 1337101200, 1, 2700, '#f26529', 'white', 156, 0],
+	['Liberated Pixel Cup: Art Phase', 1338508800, 1341100740, 0, 2700, '#71b524', 'black', 138, 0],
+	['Experimental Gameplay Project - June', 1338508800, 1341100740, 0, 2700, '#cc3131', 'white', 113, 0],
+	['The Sixth Super Friendship Club Pageant', 1338508800, 1341100740, 0, 2700, '#ff3363', 'white', 121, 0],
+	['National Game Development Month', 1338508800, 1341100740, 0, 2700, '#d4d4d4', 'black', 153, 0],
+	['Spring Contest 2012', 1334016000, 1335830340, 0, 1890, '#61c9e8', 'black', 136, 0],
+	['8 seconds of Love 0.8', 1334448000, 1335743940, 1, 1350, '#84c1f0', 'black', 135, 0],
+	['#GPCv13', 1337011200, 1337659140, 1, 675, '#32a3ff', 'black', 144, 0],
+	['PyWeek - May 2012', 1336262400, 1336867200, 1, 630, '#ffc532', 'black', 111, 0],
+	['7 Day FPS Challenge', 1339200000, 1339804740, 0, 630, '#00ad8a', 'black', 164, 0],
+	['Ludum Dare #23', 1334970000, 1335229200, 1, 270, '#5e7582', 'white', 107, 0],
+	['GMC Jam N6', 1335571260, 1335830340, 1, 270, '#34541d', 'white', 145, 0],
+	['Mayhem PIGJam', 1337997600, 1338174000, 1, 184, '#ed96c1', 'white', 165, 0],
+	['Wild Game Challenge', 1338008400, 1338181200, 1, 180, '#171717', 'white', 141, 0],
+	['Wild Game Challenge', 1335589200, 1335762000, 1, 180, '#171717', 'white', 140, 0],
+	['Wild Game Challenge', 1341032400, 1341205200, 1, 180, '#171717', 'white', 142, 0],
+	['Wild Game Challenge', 1343451600, 1343624400, 1, 180, '#171717', 'white', 143, 0],
+	['MiniLD #34', 1337385600, 1337558340, 0, 180, '#5e7582', 'white', 154, 0],
+	['Robot Day 2012', 1341878400, 1341964740, 0, 90, '#ffd900', 'black', 152, 0],
+	['8h LD', 1338012000, 1338040800, 1, 30, '#5e7582', 'white', 155, 0],
+	['The Video Game Name Generator Spectacular Event of spectacularness!', 1335747600, 1335758400, 1, 11, '#f6efda', 'black', 147, 0],
+	['Timezone Lottery Klik Jam #13', 1336284000, 1336291200, 1, 8, '#f6efda', 'black', 151, 0],
+	['Klik of the Month Klub #58', 1335049200, 1335056400, 1, 8, '#f6efda', 'black', 89, 0],
+	['Klik of the Month Klub #59', 1337468400, 1337475600, 1, 8, '#f6efda', 'black', 150, 0]
+]
+-->
+
+</script>
+<script type="text/javascript" src="js/all.js.pagespeed.ce.dapH_lybXT.js"></script>
+</head>
+<body>
+<div id=fb-root></div>
+<script type="text/javascript">
+
+			(function(d, s, id) {
+
+			var js, fjs = d.getElementsByTagName(s)[0];
+
+			if (d.getElementById(id)) {return;}
+
+			js = d.createElement(s); js.id = id;
+
+			js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+
+			fjs.parentNode.insertBefore(js, fjs);
+
+			}(document, 'script', 'facebook-jssdk'));
+
+			
+
+			(function() {
+
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+
+			po.src = 'https://apis.google.com/js/plusone.js';
+
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+
+			})();
+
+		</script>
+<div id=wrap>
+<div id=header>
+<h1>PlanIt</h1>
+<a href="/">PlanIt</a>
+</div>
+<div id=calendar_container>
+<div id=calendar>
+<div id=months>
+<div style="width:1080px;"><div>April</div></div><div style="width:2790px;"><div>May</div></div><div style="width:2700px;"><div>June</div></div><div style="width:2790px;"><div>July</div></div><div style="width:1440px;"><div>August</div></div>	</div>
+<div id=calendar_main>
+<div id=past></div>
+<div id=days>
+<div id=d-2012-4-19 class=wd-4>19th</div><div id=d-2012-4-20 class=wd-5>20th</div><div id=d-2012-4-21 class=wd-6>21st</div><div id=d-2012-4-22 class=wd-7>22nd</div><div id=d-2012-4-23 class=wd-1>23rd</div><div id=d-2012-4-24 class=wd-2>24th</div><div id=d-2012-4-25 class=wd-3>25th</div><div id=d-2012-4-26 class=wd-4>26th</div><div id=d-2012-4-27 class=wd-5>27th</div><div id=d-2012-4-28 class=wd-6>28th</div><div id=d-2012-4-29 class=wd-7>29th</div><div id=d-2012-4-30 class=wd-1>30th</div><div id=d-2012-5-1 class=wd-2>1st</div><div id=d-2012-5-2 class=wd-3>2nd</div><div id=d-2012-5-3 class=wd-4>3rd</div><div id=d-2012-5-4 class=wd-5>4th</div><div id=d-2012-5-5 class=wd-6>5th</div><div id=d-2012-5-6 class=wd-7>6th</div><div id=d-2012-5-7 class=wd-1>7th</div><div id=d-2012-5-8 class=wd-2>8th</div><div id=d-2012-5-9 class=wd-3>9th</div><div id=d-2012-5-10 class=wd-4>10th</div><div id=d-2012-5-11 class=wd-5>11th</div><div id=d-2012-5-12 class=wd-6>12th</div><div id=d-2012-5-13 class=wd-7>13th</div><div id=d-2012-5-14 class=wd-1>14th</div><div id=d-2012-5-15 class=wd-2>15th</div><div id=d-2012-5-16 class=wd-3>16th</div><div id=d-2012-5-17 class=wd-4>17th</div><div id=d-2012-5-18 class=wd-5>18th</div><div id=d-2012-5-19 class=wd-6>19th</div><div id=d-2012-5-20 class=wd-7>20th</div><div id=d-2012-5-21 class=wd-1>21st</div><div id=d-2012-5-22 class=wd-2>22nd</div><div id=d-2012-5-23 class=wd-3>23rd</div><div id=d-2012-5-24 class=wd-4>24th</div><div id=d-2012-5-25 class=wd-5>25th</div><div id=d-2012-5-26 class=wd-6>26th</div><div id=d-2012-5-27 class=wd-7>27th</div><div id=d-2012-5-28 class=wd-1>28th</div><div id=d-2012-5-29 class=wd-2>29th</div><div id=d-2012-5-30 class=wd-3>30th</div><div id=d-2012-5-31 class=wd-4>31st</div><div id=d-2012-6-1 class=wd-5>1st</div><div id=d-2012-6-2 class=wd-6>2nd</div><div id=d-2012-6-3 class=wd-7>3rd</div><div id=d-2012-6-4 class=wd-1>4th</div><div id=d-2012-6-5 class=wd-2>5th</div><div id=d-2012-6-6 class=wd-3>6th</div><div id=d-2012-6-7 class=wd-4>7th</div><div id=d-2012-6-8 class=wd-5>8th</div><div id=d-2012-6-9 class=wd-6>9th</div><div id=d-2012-6-10 class=wd-7>10th</div><div id=d-2012-6-11 class=wd-1>11th</div><div id=d-2012-6-12 class=wd-2>12th</div><div id=d-2012-6-13 class=wd-3>13th</div><div id=d-2012-6-14 class=wd-4>14th</div><div id=d-2012-6-15 class=wd-5>15th</div><div id=d-2012-6-16 class=wd-6>16th</div><div id=d-2012-6-17 class=wd-7>17th</div><div id=d-2012-6-18 class=wd-1>18th</div><div id=d-2012-6-19 class=wd-2>19th</div><div id=d-2012-6-20 class=wd-3>20th</div><div id=d-2012-6-21 class=wd-4>21st</div><div id=d-2012-6-22 class=wd-5>22nd</div><div id=d-2012-6-23 class=wd-6>23rd</div><div id=d-2012-6-24 class=wd-7>24th</div><div id=d-2012-6-25 class=wd-1>25th</div><div id=d-2012-6-26 class=wd-2>26th</div><div id=d-2012-6-27 class=wd-3>27th</div><div id=d-2012-6-28 class=wd-4>28th</div><div id=d-2012-6-29 class=wd-5>29th</div><div id=d-2012-6-30 class=wd-6>30th</div><div id=d-2012-7-1 class=wd-7>1st</div><div id=d-2012-7-2 class=wd-1>2nd</div><div id=d-2012-7-3 class=wd-2>3rd</div><div id=d-2012-7-4 class=wd-3>4th</div><div id=d-2012-7-5 class=wd-4>5th</div><div id=d-2012-7-6 class=wd-5>6th</div><div id=d-2012-7-7 class=wd-6>7th</div><div id=d-2012-7-8 class=wd-7>8th</div><div id=d-2012-7-9 class=wd-1>9th</div><div id=d-2012-7-10 class=wd-2>10th</div><div id=d-2012-7-11 class=wd-3>11th</div><div id=d-2012-7-12 class=wd-4>12th</div><div id=d-2012-7-13 class=wd-5>13th</div><div id=d-2012-7-14 class=wd-6>14th</div><div id=d-2012-7-15 class=wd-7>15th</div><div id=d-2012-7-16 class=wd-1>16th</div><div id=d-2012-7-17 class=wd-2>17th</div><div id=d-2012-7-18 class=wd-3>18th</div><div id=d-2012-7-19 class=wd-4>19th</div><div id=d-2012-7-20 class=wd-5>20th</div><div id=d-2012-7-21 class=wd-6>21st</div><div id=d-2012-7-22 class=wd-7>22nd</div><div id=d-2012-7-23 class=wd-1>23rd</div><div id=d-2012-7-24 class=wd-2>24th</div><div id=d-2012-7-25 class=wd-3>25th</div><div id=d-2012-7-26 class=wd-4>26th</div><div id=d-2012-7-27 class=wd-5>27th</div><div id=d-2012-7-28 class=wd-6>28th</div><div id=d-2012-7-29 class=wd-7>29th</div><div id=d-2012-7-30 class=wd-1>30th</div><div id=d-2012-7-31 class=wd-2>31st</div><div id=d-2012-8-1 class=wd-3>1st</div><div id=d-2012-8-2 class=wd-4>2nd</div><div id=d-2012-8-3 class=wd-5>3rd</div><div id=d-2012-8-4 class=wd-6>4th</div><div id=d-2012-8-5 class=wd-7>5th</div><div id=d-2012-8-6 class=wd-1>6th</div><div id=d-2012-8-7 class=wd-2>7th</div><div id=d-2012-8-8 class=wd-3>8th</div><div id=d-2012-8-9 class=wd-4>9th</div><div id=d-2012-8-10 class=wd-5>10th</div><div id=d-2012-8-11 class=wd-6>11th</div><div id=d-2012-8-12 class=wd-7>12th</div><div id=d-2012-8-13 class=wd-1>13th</div><div id=d-2012-8-14 class=wd-2>14th</div><div id=d-2012-8-15 class=wd-3>15th</div><div id=d-2012-8-16 class=wd-4>16th</div>	</div>
+<div id=timeline><div id=timeline_back></div></div>
+</div>
+</div>
+<div id=calendar_options>
+Time zone:
+<select id=selected_timezone>
+<option value=-12>UTC-12:00</option>
+<option value=-11>UTC-11:00</option>
+<option value=-10>UTC-10:00</option>
+<option value=-9.5>UTC-09:30</option>
+<option value=-9>UTC-09:00</option>
+<option value=-8>UTC-08:00</option>
+<option value=-7>UTC-07:00</option>
+<option value=-6>UTC-06:00</option>
+<option value=-5>UTC-05:00</option>
+<option value=-4.5>UTC-04:30</option>
+<option value=-4>UTC-04:00</option>
+<option value=-3.5>UTC-03:30</option>
+<option value=-3>UTC-03:00</option>
+<option value=-2.5>UTC-02:30</option>
+<option value=-2>UTC-02:00</option>
+<option value=-1>UTC-01:00</option>
+<option value=0>UTC</option>
+<option value=1>UTC+01:00</option>
+<option value=2>UTC+02:00</option>
+<option value=3>UTC+03:00</option>
+<option value=3.5>UTC+03:30</option>
+<option value=4>UTC+04:00</option>
+<option value=4.5>UTC+04:30</option>
+<option value=5>UTC+05:00</option>
+<option value=5.5>UTC+05:30</option>
+<option value=5.75>UTC+05:45</option>
+<option value=6>UTC+06:00</option>
+<option value=6.5>UTC+06:30</option>
+<option value=7>UTC+07:00</option>
+<option value=8>UTC+08:00</option>
+<option value=9>UTC+09:00</option>
+<option value=9.5>UTC+09:30</option>
+<option value=10>UTC+10:00</option>
+<option value=10.5>UTC+10:30</option>
+<option value=11>UTC+11:00</option>
+<option value=11.5>UTC+11:30</option>
+<option value=12>UTC+12:00</option>
+<option value=12.75>UTC+12:45</option>
+<option value=13>UTC+13:00</option>
+<option value=13.75>UTC+13:45</option>
+<option value=14>UTC+14:00</option>	</select>
+</div>
+</div>
+<div id=content>
+<h2>Hi there!</h2>
+<p>
+This is CompoHub, a little site that lists all kinds of game development events that are available all around the world.
+Just drag the timeline above to see to the future. Or to the past if your memory is weak.
+All the times are in the time zone of your choice.
+</p>
+<p>
+If you think this site is missing an event or an important feature or you find a bug, use the <a href="https://bitbucket.org/randati/compohub/issues?status=new&amp;status=open">issue tracker</a> and I'll look into it.
+For anything else, you can comment on the <a href="http://blog.compohub.net">dev log</a>.
+You might want to follow updates easily, so create a <a href=generate-feed>personal feed</a> for yourself.
+Also, I created a page for some <a href=related>interesting stuff</a> you might want to see.
+</p>
+<br>
+<br>
+<br>
+<ul class=menu>
+<li><a href=related>Related stuff</a></li>
+<li><a href=generate-feed>Feed</a></li>
+<li><a href="http://blog.compohub.net">Dev log</a></li>
+<li><a href="https://bitbucket.org/randati/compohub/issues?status=new&amp;status=open">Issue tracker</a></li>
+</ul>
+<br><br>
+<ul class=menu>
+<li><strong><a href=missing rel=nofollow>Event missing?</a></strong></li>
+</ul>	</div>
+</div>
+<div id=footer>
+<div id=sharers>
+<div class=sharer><div class=fb-like data-href="http://compohub.net" data-send=false data-layout=button_count data-show-faces=false></div></div>
+<div class=sharer><div class=g-plusone data-size=medium data-href="http://compohub.net"></div></div>
+<div class=sharer><div class=tweet><a href="https://twitter.com/share" class=twitter-share-button data-url="http://compohub.net" data-text="CompoHub lists all kinds of game development events!" data-count=horizontal>Tweet</a></div></div>
+</div>
+<div id=footer_text>
+<a href="/generate-feed">Feed</a> &mdash;
+<a href="/login?to=admin">Login</a>
+</div>
+</div>
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+</body>
+</html>
