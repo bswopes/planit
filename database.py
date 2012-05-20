@@ -41,3 +41,9 @@ def users():
     cursor.execute('SELECT * FROM users')
     entries = cursor.fetchall()
     return entries
+
+def activitiesInEvent(event_id):
+    stmt = 'SELECT * FROM activities WHERE event_id = ' + str(event_id)
+    cursor.execute(stmt)
+    entries = cursor.fetchall()
+    return entries
