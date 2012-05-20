@@ -91,9 +91,9 @@ def genPage(info):
         txt, last = genTimeline(activities, earliest, first)
         if first:
             first = first - 1
-            timelines.append(("""<div style="border-top: 1px solid gray; padding-top: 0px; background: rgba(0, 0, 255, 0.2); padding-left: 20"><h2 style="margin-bottom: 0;">%s</h2></div>\n""" % name) + txt)
+            timelines.append(("""<div style="border-top: 1px solid gray; padding-top: 0px; background: rgba(0, 0, 255, 0.2); padding-left: 20; height: 50"><h2 style="margin-bottom: 0; position: fixed">%s</h2></div>\n""" % name) + txt)
         else:
-            timelines.append(("""<div style="border-top: 1px solid gray; padding-top: 0px; padding-left: 20"><h2 style="margin-bottom: 0;">%s</h2></div>\n""" % name) + txt)
+            timelines.append(("""<div style="border-top: 1px solid gray; padding-top: 0px; padding-left: 20; height: 50px"><h2 style="margin-bottom: 0; position: fixed">%s</h2></div>\n""" % name) + txt)
         if last:
             if not latest or (last > latest):
                 latest = last
