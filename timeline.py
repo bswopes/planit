@@ -1,7 +1,7 @@
 import datetime
 
 container = r"""<div style="overflow: auto; width: 100%%; padding:0px; margin: 0px; border-radius: 15px; font-family: arial">
-<div style="background-image:url('Capture2.PNG'); padding:0px; margin: 0px; border-radius: 15px; width: %d">
+<div style="background-image:url('Capture2.PNG'); padding:0px; margin: 0px; border-radius: 15px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; width: %d">
   %s
 </div>
 </div>
