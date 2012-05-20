@@ -106,7 +106,7 @@ def genPage(info):
     hour = int(text[11:13])
     minute = int(text[14:16])
     total = 0
-    labels += """<div style="padding:0px; background-color: #FFFF22; margins: 0; position: absolute; width: 4px; height: 10000px; top: 0px; left: """ + str(3 * (calcTime(str(datetime.datetime.now())) - calcTime(start)) + 3) + """;"></div>"""
+    labels += """<div style="z-index:1000; padding:0px; background-color: #FFFF22; margins: 0; position: absolute; width: 4px; height: 10000px; top: 0px; left: """ + str(3 * (calcTime(str(datetime.datetime.now())) - calcTime(start)) + 3) + """;"></div>"""
     if minute != 0:
         total = 60 - minute
     labelData = datetime.datetime(year, month, day, hour, minute) + datetime.timedelta(0, total * 60)

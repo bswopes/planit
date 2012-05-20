@@ -25,7 +25,7 @@ def cal(request, user_id):
                    str(activities[i].endTime), \
                    activities[i].description) \
                    for i in range(len(activities))]) )
-    return HttpResponse(timeline.genPage(info))
+    return HttpResponse("""<br /><a href="http://149.89.151.124:8080/cal/1"><img src="http://csweb.stuy.edu/~mrudoy/planit_logo.png" style='border:0'/></a><br/><br/>""" + timeline.genPage(info))
 
 #    return render_to_response('templates/image.html',{'laser': STATIC_URL})
 
