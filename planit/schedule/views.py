@@ -13,6 +13,7 @@ def cal(request, user_id):
     info = []
     for u in users:
         activities = u.activities.all()
+
         friends = [len([user for user in activity.user_set.all() if user.name != users[0].name]) for activity in activities]
         info.append( \
             (u.name, \
@@ -25,6 +26,7 @@ def cal(request, user_id):
                    activities[i].description) \
                    for i in range(len(activities))]) )
     return HttpResponse(timeline.genPage(info))
+
 #    return render_to_response('templates/image.html',{'laser': STATIC_URL})
 
 from django.template import RequestContext, Context

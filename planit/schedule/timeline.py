@@ -20,20 +20,27 @@ color: #FFFFFF;
   <div style="background-image:url('http://csweb.stuy.edu/~mrudoy/Capture2.PNG'); padding:0px; margin: 0px; border-radius: 15px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; width: %d">
     <br />
     %s
+    <br /><bre />
     %s
   </div>
 </div>
 """
 #
-timeline = r"""<div style="height: 100; padding: 0px; margin: 0px; position: relative">
+timeline = r"""<div style="height: 100px; padding: 0px; margin: 0px; position: relative">
+      %s
+    </div>
+"""
+
+timeline1 = r"""<div style="height: 100px; padding: 0px; margin: 0px; position: relative; background: rgba(0, 0, 255, 0.2);">
       %s
     </div>
 """
 
 item = r"""<div style="background-image:url('http://csweb.stuy.edu/~mrudoy/Capture.PNG'); background-repeat: repeat-x; position: absolute; top: {layer}; left: {position}; width: {duration}; height: 19; padding: 0px; margin: 0px; border-style: solid; border-color: #777777; border-width: 2px; padding-left: 4px; padding-top: 1px; border-radius: 15px">
-        <a href="http://149.89.150.100:8080/activity/{idnum}"><span style="white-space: nowrap; width: 100%">{content}</span></a>
+        <a href="/activity/{idnum}"><span style="white-space: nowrap; width: 100%">{content}</span></a>
       </div>
 """
+
 def calcTime(text):# in minutes
     year = int(text[0:4])
     month = int(text[5:7])
@@ -46,9 +53,9 @@ def calcTime(text):# in minutes
 def genItem(layernum, position, duration, content, idnum):
     return item.format(**{"layer":(30 * layernum + 8), "position":position, "duration": duration, "content":content, "idnum":idnum})
 
-def genTimeline(activities, startTime = None):
+def genTimeline(activities, startTime = None, first = 0):
     if not activities:
-        return timeline % "", None
+        return ((first and timeline1) or timeline) % "", None
     items = []
     maxTime = [0, 0, 0]
     if not startTime:
@@ -67,7 +74,7 @@ def genTimeline(activities, startTime = None):
             maxTime[2] = end
         item = genItem(layernum, 5 + 3 * start, 3 * (end - start) - 5, name, idnum)
         items.append(item)
-    return timeline % ("\n".join(items)), max(maxTime)
+    return ((first and timeline1) or timeline) % ("\n".join(items)), max(maxTime)
 
 def genPage(info):
     for i in range(len(info)):
@@ -79,9 +86,14 @@ def genPage(info):
             start = activities[0][3]
     timelines = []
     latest = None
+    first = 1
     for (name, activities) in info:
-        txt, last = genTimeline(activities, earliest)
-        timelines.append(("""<div style="padding-left: 20"><h2>%s</h2></div>\n""" % name) + txt)
+        txt, last = genTimeline(activities, earliest, first)
+        if first:
+            first = first - 1
+            timelines.append(("""<div style="border-top: 1px solid gray; padding-top: 0px; background: rgba(0, 0, 255, 0.2); padding-left: 20; height: 50"><h2 style="margin-bottom: 0; position: fixed">%s</h2></div>\n""" % name) + txt)
+        else:
+            timelines.append(("""<div style="border-top: 1px solid gray; padding-top: 0px; padding-left: 20; height: 50px"><h2 style="margin-bottom: 0; position: fixed">%s</h2></div>\n""" % name) + txt)
         if last:
             if not latest or (last > latest):
                 latest = last
