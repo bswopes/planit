@@ -6,11 +6,14 @@ from schedule.models import User
 import timeline
 
 def cal(request, user_id):
-    u = get(User, pk=user_id)
-    #user_activities = get_list(UserActivity, user=p)
-    activities = u.activities.all()
-    activity_names = [activity.name for activity in activities]
-    info = [ (u.name, [(activity.pk, activity.name, activity.event, str(activity.startTime), str(activity.endTime), activity.description)  for activity in activities]) ]
+    users = [get(User, pk=user_id)]
+    if user_id == '1':
+        users += [get(User, pk=2)]
+    info = []
+    for u in users:
+        activities = u.activities.all()
+        activity_names = [activity.name for activity in activities]
+        info.append( (u.name, [(activity.pk, activity.name, activity.event, str(activity.startTime), str(activity.endTime), activity.description)  for activity in activities]) )
     return HttpResponse(timeline.genPage(info))
 #    return render_to_response('templates/image.html',{'laser': STATIC_URL})
 
