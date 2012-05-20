@@ -8,12 +8,12 @@ import timeline
 def cal(request, user_id):
     users = [get(User, pk=user_id)]
     if user_id == '1':
-        users += [get(User, pk=2)]
+        for uid in '23':
+            users += [get(User, pk=uid)]
     info = []
     for u in users:
         activities = u.activities.all()
-        activity_names = [activity.name for activity in activities]
-        info.append( (u.name, [(activity.pk, activity.name, activity.event, str(activity.startTime), str(activity.endTime), activity.description)  for activity in activities]) )
+        info.append( (u.name, [(activity.pk, activity.name + ' <i>(' + str(activity.user_set.count()-1) + ')</i>', activity.event, str(activity.startTime), str(activity.endTime), activity.description)  for activity in activities]) )
     return HttpResponse(timeline.genPage(info))
 #    return render_to_response('templates/image.html',{'laser': STATIC_URL})
 
