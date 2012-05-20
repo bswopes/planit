@@ -28,5 +28,5 @@ class UserActivity(models.Model):
     activity = models.ForeignKey(Activity)
 
 class Friend(models.Model):
-    user1 = models.ForeignKey(User)
-    user2 = models.ForeignKey(User)
+    user1 = models.ForeignKey(User, related_name='+')
+    user2 = models.ForeignKey(User, related_name='+')
