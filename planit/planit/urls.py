@@ -14,6 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^cal/$', 'schedule.views.cal'),
+    url(r'^cal/(?P<user_id>\d+)$', 'schedule.views.cal'),
     url(r'^activity/$', 'schedule.views.activity'),
 )
