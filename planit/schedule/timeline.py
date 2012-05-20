@@ -16,8 +16,8 @@ text-decoration: none;
 color: #FFFFFF;
 }
 </style>
-<div style="overflow: auto; width: 100%%; padding:0px; margin: 0px; border-radius: 15px; font-family: arial; position: relative">
-  <div style="background-image:url('../Capture2.PNG'); padding:0px; margin: 0px; border-radius: 15px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; width: %d">
+<div onselectstart="return false" style="overflow: auto; overflow-y:hidden; width: 100%%; padding:0px; margin: 0px; border-radius: 15px; font-family: arial; position: relative">
+  <div style="background-image:url('http://csweb.stuy.edu/~mrudoy/Capture2.PNG'); padding:0px; margin: 0px; border-radius: 15px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; width: %d">
     <br />
     %s
     %s
@@ -30,8 +30,8 @@ timeline = r"""<div style="height: 100; padding: 0px; margin: 0px; position: rel
     </div>
 """
 
-item = r"""<div style="background-image:url('../Capture.PNG'); background-repeat: repeat-x; position: absolute; top: {layer}; left: {position}; width: {duration}; height: 19; padding: 0px; margin: 0px; border-style: solid; border-color: #777777; border-width: 2px; padding-left: 4px; padding-top: 1px; border-radius: 15px">
-        <a href="http://cslab2-24.stuy.edu:8080/activity/{idnum}"><span style="white-space: nowrap; width: 100%">{content}</span></a>
+item = r"""<div style="background-image:url('http://csweb.stuy.edu/~mrudoy/Capture.PNG'); background-repeat: repeat-x; position: absolute; top: {layer}; left: {position}; width: {duration}; height: 19; padding: 0px; margin: 0px; border-style: solid; border-color: #777777; border-width: 2px; padding-left: 4px; padding-top: 1px; border-radius: 15px">
+        <a href="http://149.89.150.100:8080/activity/{idnum}"><span style="white-space: nowrap; width: 100%">{content}</span></a>
       </div>
 """
 def calcTime(text):# in minutes
@@ -49,9 +49,6 @@ def genItem(layernum, position, duration, content, idnum):
 def genTimeline(activities, startTime = None):
     if not activities:
         return timeline % "", None
-    print [a[3] for a in activities]
-    activities.sort(key = lambda x : calcTime(x[3]))
-    print [a[3] for a  in activities]
     items = []
     maxTime = [0, 0, 0]
     if not startTime:
@@ -73,9 +70,9 @@ def genTimeline(activities, startTime = None):
     return timeline % ("\n".join(items)), max(maxTime)
 
 def genPage(info):
-    earliest = None
     for i in range(len(info)):
-        info[i][1].sort(key = lambda x : calcTime(x[3]) )
+        info[i][1].sort(key = lambda x : calcTime(x[3]))
+    earliest = None
     for (name, activities) in info:
         if activities and (not earliest or calcTime(activities[0][3]) < earliest):
             earliest = calcTime(activities[0][3])
@@ -97,6 +94,7 @@ def genPage(info):
     hour = int(text[11:13])
     minute = int(text[14:16])
     total = 0
+    labels += """<div style="padding:0px; background-color: #FFFF22; margins: 0; position: absolute; width: 4px; height: 10000px; top: 0px; left: """ + str(3 * (calcTime(str(datetime.datetime.now())) - calcTime(start)) + 3) + """;"></div>"""
     if minute != 0:
         total = 60 - minute
     labelData = datetime.datetime(year, month, day, hour, minute) + datetime.timedelta(0, total * 60)
