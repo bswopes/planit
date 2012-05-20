@@ -14,7 +14,7 @@ def cal(request, user_id):
     for u in users:
         activities = u.activities.all()
         info.append( (u.name, [(activity.pk, activity.name + ' <i>(' + str(activity.user_set.count()-1) + ')</i>', activity.event, str(activity.startTime), str(activity.endTime), activity.description)  for activity in activities]) )
-    return HttpResponse(timeline.genPage(info))
+    return HttpResponse("""<br /><img src="http://csweb.stuy.edu/~mrudoy/planit_logo.png" /><br /><br />""" + timeline.genPage(info))
 #    return render_to_response('templates/image.html',{'laser': STATIC_URL})
 
 from django.template import RequestContext, Context
