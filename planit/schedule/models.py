@@ -26,3 +26,7 @@ class User(models.Model):
 class UserActivity(models.Model):
     user = models.ForeignKey(User)
     activity = models.ForeignKey(Activity)
+
+class Friend(models.Model):
+    user1 = models.ForeignKey(User)
+    user2 = models.ForeignKey(User)
