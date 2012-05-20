@@ -108,7 +108,11 @@ ROOT_URLCONF = 'planit.urls'
 WSGI_APPLICATION = 'planit.wsgi.application'
 
 TEMPLATE_DIRS = (
+<<<<<<< HEAD
     '/home/students/2012/mrudoy/public_html/blake-planit/planit/schedule'
+=======
+    '/home/students/2012/mrudoy/public_html/alex-planit/planit/planit/schedule'
+>>>>>>> 3ecde9f96423868b7608500984928fb4f2faacd9
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

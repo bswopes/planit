@@ -13,22 +13,17 @@ class Activity(models.Model):
     startTime = models.DateTimeField()
     endTime = models.DateTimeField()
     description = models.TextField()
+    #user = models.ManyToManyField(User)
     
     def __unicode__(self):
         return self.name
 
 class User(models.Model):
     name = models.CharField(max_length = 200)
-    
+    activities = models.ManyToManyField(Activity)
+
     def __unicode__(self):
         return self.name
-
-class UserActivity(models.Model):
-    user = models.ForeignKey(User)
-    activity = models.ForeignKey(Activity)
-    
-    def __unicode__(self):
-        return user.__unicode__() + " is going to " + activity.__unicode__()
 
 class Friend(models.Model):
     user1 = models.ForeignKey(User, related_name='+')
