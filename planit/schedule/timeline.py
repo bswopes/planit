@@ -31,7 +31,7 @@ timeline = r"""<div style="height: 100; padding: 0px; margin: 0px; position: rel
 """
 
 item = r"""<div style="background-image:url('http://csweb.stuy.edu/~mrudoy/Capture.PNG'); background-repeat: repeat-x; position: absolute; top: {layer}; left: {position}; width: {duration}; height: 19; padding: 0px; margin: 0px; border-style: solid; border-color: #777777; border-width: 2px; padding-left: 4px; padding-top: 1px; border-radius: 15px">
-        <a href="http://149.89.150.100:8080/activity/{idnum}"><span style="white-space: nowrap; width: 100%">{content}</span></a>
+        <a href="/activity/{idnum}"><span style="white-space: nowrap; width: 100%">{content}</span></a>
       </div>
 """
 def calcTime(text):# in minutes
