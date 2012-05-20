@@ -49,6 +49,9 @@ def genItem(layernum, position, duration, content, idnum):
 def genTimeline(activities, startTime = None):
     if not activities:
         return timeline % "", None
+    print [a[3] for a in activities]
+    activities.sort(key = lambda x : calcTime(x[3]))
+    print [a[3] for a  in activities]
     items = []
     maxTime = [0, 0, 0]
     if not startTime:
@@ -71,6 +74,8 @@ def genTimeline(activities, startTime = None):
 
 def genPage(info):
     earliest = None
+    for i in range(len(info)):
+        info[i][1].sort(key = lambda x : calcTime(x[3]) )
     for (name, activities) in info:
         if activities and (not earliest or calcTime(activities[0][3]) < earliest):
             earliest = calcTime(activities[0][3])
