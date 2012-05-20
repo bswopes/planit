@@ -13,7 +13,17 @@ def cal(request, user_id):
     info = []
     for u in users:
         activities = u.activities.all()
-        info.append( (u.name, [(activity.pk, activity.name + ' <i>(' + str(activity.user_set.count()-1) + ')</i>', activity.event, str(activity.startTime), str(activity.endTime), activity.description)  for activity in activities]) )
+        friends = [len([user for user in activity.user_set.all() if user.name != users[0].name]) for activity in activities]
+        info.append( \
+            (u.name, \
+                 [(activities[i].pk, \
+                   activities[i].name + \
+                   ' <i>(' + str(friends[i]) + ')</i>', \
+                   str(activities[i].event), \
+                   str(activities[i].startTime), \
+                   str(activities[i].endTime), \
+                   activities[i].description) \
+                   for i in range(len(activities))]) )
     return HttpResponse(timeline.genPage(info))
 #    return render_to_response('templates/image.html',{'laser': STATIC_URL})
 
