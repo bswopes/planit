@@ -1,11 +1,16 @@
+<div style="text-align:center; margin: auto; padding:5px; width: 300px; height:auto; margin-top:150px; background-color: #AAAAFF; border-radius: 30px; padding-bottom:15px;">
+<div style="margin: auto; width = 100%">
 <h1>{{ activity.event }} </h1>
 <h2>{{ activity.name }} </h2>
 <h3>{{ activity.startTime }} </h3>
 <h3>{{ activity.endTime }} </h3>
 <h3>{{ activity.description }} </h3>
+Friends attending:<br />
 {% for user in user_list %}
 <tr class="{% cycle 'row1' 'row2' %}" >
     <td>{{user}}</td>
     <br/>
 </tr>
 {% endfor %}
+</div>
+</div>>
