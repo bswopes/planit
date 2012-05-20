@@ -24,7 +24,3 @@ class User(models.Model):
 
     def __unicode__(self):
         return self.name
-
-#class UserActivity(models.Model):
-    #user = models.ForeignKey(User, related_name='activities')
-    #activity = models.ForeignKey(Activity, related_name='users')
