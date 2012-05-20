@@ -24,10 +24,3 @@ class User(models.Model):
 
     def __unicode__(self):
         return self.name
-
-class Friend(models.Model):
-    user1 = models.ForeignKey(User, related_name='+')
-    user2 = models.ForeignKey(User, related_name='+')
-
-    def __unicode__(self):
-        return user1.__unicode__() + " is friends with " + user2.__unicode__()
