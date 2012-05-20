@@ -20,3 +20,19 @@ def events():
     cursor.execute('SELECT * FROM events')
     entries = cursor.fetchall()
     return entries
+
+def addActivity(event_id, activityName, startTime, endTime):
+    stmt = 'INSERT INTO activities (name, startTime, endTime, event_id) VALUES ("'
+    stmt += activityName + '", "'
+    stmt += startTime + '", "'
+    stmt += endTime + '", ' + str(event_id) + ')'
+    print stmt
+    cursor.execute(stmt)
+
+def activities():
+    cursor.execute('SELECT * FROM activities')
+    entries = cursor.fetchall()
+    return entries
+
+def addOneActivity():
+    addActivity(1, 'liquid nitrogen ice cream', '2012-04-20 04:20', '2012-04-20 05:20')
