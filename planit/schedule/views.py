@@ -10,5 +10,6 @@ def activity(request, activity_id):
     #q = get_object_or_404(UserActivity, pk=useractivity_id)
     #return HttpResponse("Activity %s" % activity_id)
     #return HttpResponse("Activity %s" % p.name)
-    return render_to_response('templates/activity2.html', {'activity': p, 'user_list': p.user_set.all()},
+    user_list = Activity.objects.select_related()
+    return render_to_response('templates/activity2.html', {'activity': p, 'user_list': user_list},
     context_instance=RequestContext(request))
