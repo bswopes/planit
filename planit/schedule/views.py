@@ -11,7 +11,7 @@ def cal(request, user_id):
     activities = u.activities.all()
     activity_names = [activity.name for activity in activities]
     info = [ (u.name, [(activity.pk, activity.name, activity.event, str(activity.startTime), str(activity.endTime), activity.description)  for activity in activities]) ]
-    return HttpResponse('In the schedule index for user %s, %s: %s, %s' % (user_id, u, str(activity_names), timeline.genPage(info)))
+    return HttpResponse(timeline.genPage(info))
 #    return render_to_response('templates/image.html',{'laser': STATIC_URL})
 
 from django.template import RequestContext, Context
