@@ -34,5 +34,10 @@ def activities():
     entries = cursor.fetchall()
     return entries
 
-def addOneActivity():
-    addActivity(1, 'liquid nitrogen ice cream', '2012-04-20 04:20', '2012-04-20 05:20')
+def addUser(name):
+    cursor.execute('INSERT INTO USERS (name) VALUES ("' + name + '")')
+
+def users():
+    cursor.execute('SELECT * FROM users')
+    entries = cursor.fetchall()
+    return entries
