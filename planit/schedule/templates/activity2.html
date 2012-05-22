@@ -18,5 +18,10 @@ Friends attending:<br />
     <br/>
 </tr>
 {% endfor %}
+<br/>
+<form action="/activity/{{activity.id}}/join/" method="post">
+    {% csrf_token %}
+    <input type="submit" name="join" value="Join this Activity" />
+</form>
 </div>
 </div>
