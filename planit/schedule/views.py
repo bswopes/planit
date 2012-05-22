@@ -49,7 +49,9 @@ def join_activity(request, activity_id):
     act = Activity.objects.get(id=activity_id)
     user = User.objects.all()[0] #TODO: Don't hardcode alex!
     print "USER:",user
-    user.activities.add(activity_id)
+    print "THING:",user.activities.get(id=activity_id)
+    if act not in user.activities.all():
+        user.activities.add(activity_id)
 
     return HttpResponseRedirect("http://149.89.151.124:8080/cal/1")
 
