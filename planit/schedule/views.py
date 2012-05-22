@@ -41,18 +41,25 @@ from schedule.models import Activity, User
 def activity(request, activity_id):
     p = get_object_or_404(Activity, pk=activity_id)
     return render_to_response('templates/activity2.html', {'activity': p, 
-                                                           'user_list': p.user_set.all()},context_instance=RequestContext(request))
+                                                           'user_list': p.user_set.all(),
+                                                           'current_user': p.user_set.all()[0]}, #TODO: not alex!
+                              context_instance=RequestContext(request))
 
     
 
 def join_activity(request, activity_id):
     act = Activity.objects.get(id=activity_id)
     user = User.objects.all()[0] #TODO: Don't hardcode alex!
-    print "USER:",user
-    print "THING:",user.activities.get(id=activity_id)
     if act not in user.activities.all():
         user.activities.add(activity_id)
 
     return HttpResponseRedirect("http://149.89.151.124:8080/cal/1")
+
+def unjoin_activity(request, activity_id):
+    act = Activity.objects.get(id=activity_id)
+    user = User.objects.all()[0] #TODO: Don't hardcode alex!
+    user.activities.remove(activity_id)
+
+    return HttpResponseRedirect("http://149.89.150.100:8080/cal/1")
 
 

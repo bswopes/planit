@@ -19,9 +19,17 @@ Friends attending:<br />
 </tr>
 {% endfor %}
 <br/>
-<form action="/activity/{{activity.id}}/join/" method="post">
-    {% csrf_token %}
-    <input type="submit" name="join" value="Join this Activity" />
-</form>
+
+{% if user not in activity.user_set.all %}
+    <form action="/activity/{{activity.id}}/join/" method="post">
+        {% csrf_token %}
+        <input type="submit" name="join" value="Join this Activity" />
+    </form>
+{% else %}
+    <form action="/activity/{{activity.id}}/unjoin/" method="post">
+        {% csrf_token %}
+        <input type="submit" name="unjoin" value="Leave this Activity" />
+    </form>
+{% endif %}
 </div>
 </div>

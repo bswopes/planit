@@ -17,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^cal/(?P<user_id>\d+)$', 'schedule.views.cal'),
     url(r'^activity/(?P<activity_id>\d+)/$', 'schedule.views.activity'),
     url(r'^activity/(?P<activity_id>\d+)/join/$', 'schedule.views.join_activity'),
+    url(r'^activity/(?P<activity_id>\d+)/unjoin/$', 'schedule.views.unjoin_activity'),
     #url(r'^activity/$', 'schedule.views.activity'),
 )
