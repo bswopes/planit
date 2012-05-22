@@ -20,7 +20,7 @@ Friends attending:<br />
 {% endfor %}
 <br/>
 
-{% if user not in activity.user_set.all %}
+{% if current_user not in activity.user_set.all %}
     <form action="/activity/{{activity.id}}/join/" method="post">
         {% csrf_token %}
         <input type="submit" name="join" value="Join this Activity" />

@@ -42,7 +42,7 @@ def activity(request, activity_id):
     p = get_object_or_404(Activity, pk=activity_id)
     return render_to_response('templates/activity2.html', {'activity': p, 
                                                            'user_list': p.user_set.all(),
-                                                           'current_user': p.user_set.all()[0]}, #TODO: not alex!
+                                                           'current_user': User.objects.get(id=1)}, #TODO: not alex!
                               context_instance=RequestContext(request))
 
     
