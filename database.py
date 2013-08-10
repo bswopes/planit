@@ -13,7 +13,7 @@ def init():
     c.execute("create table intents (userID, activityID)")
     
 def addEvent(name): 
-    cursor.execute('INSERT INTO events (name) VALUES("' + name + '")')
+    cursor.execute('INSERT INTO events (name) VALUES(%s)',name)
     cxn.commit()
 
 def events():
@@ -22,12 +22,9 @@ def events():
     return entries
 
 def addActivity(event_id, activityName, startTime, endTime):
-    stmt = 'INSERT INTO activities (name, startTime, endTime, event_id) VALUES ("'
-    stmt += activityName + '", "'
-    stmt += startTime + '", "'
-    stmt += endTime + '", ' + str(event_id) + ')'
-    print stmt
-    cursor.execute(stmt)
+    stmt = 'INSERT INTO activities (name, startTime, endTime, event_id) VALUES (%s,%s,%s,%s)'
+    cursor.execute(stmt,(activityName,startTime,endTime,event_id))
+    print cursor._last_executed
 
 def activities():
     cursor.execute('SELECT * FROM activities')
@@ -35,7 +32,7 @@ def activities():
     return entries
 
 def addUser(name):
-    cursor.execute('INSERT INTO USERS (name) VALUES ("' + name + '")')
+    cursor.execute('INSERT INTO USERS (name) VALUES (%s)',name)
 
 def users():
     cursor.execute('SELECT * FROM users')
@@ -43,7 +40,7 @@ def users():
     return entries
 
 def activitiesInEvent(event_id):
-    stmt = 'SELECT * FROM activities WHERE event_id = ' + str(event_id)
-    cursor.execute(stmt)
+    stmt = 'SELECT * FROM activities WHERE event_id = %s'
+    cursor.execute(stmt,event_id)
     entries = cursor.fetchall()
     return entries
